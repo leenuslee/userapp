@@ -2,6 +2,7 @@
 
 # Script to create the database
 create database if not exists userdb;
+
 use userdb;
 
 create table user (
@@ -11,7 +12,12 @@ create table user (
    PRIMARY KEY (ID)
 );			   
 
-alter table user
-add unique index unique_name_index (name);
+alter table user add unique index unique_name_index (name);
 
 commit;
+
+# To compile
+mvn install
+
+# To run
+java -jar target\LeeDemoUserApp-1.0.0.jar
